@@ -11,6 +11,7 @@ import { SlidesComponent } from './landing-page/slides/slides.component';
 import { WeeklyBillboardsComponent } from './landing-page/weekly-billboards/weekly-billboards.component';
 import { PremieresComponent } from './landing-page/premieres/premieres.component';
 import { CarouselComponent } from './landing-page/carousel/carousel.component';
+import { FooterComponent } from './landing-page/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CarouselComponent } from './landing-page/carousel/carousel.component';
     SlidesComponent,
     WeeklyBillboardsComponent,
     PremieresComponent,
-    CarouselComponent
+    CarouselComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
