@@ -10,6 +10,7 @@ import { MoviesFilterComponent } from './landing-page/movies-filter/movies-filte
 import { SlidesComponent } from './landing-page/slides/slides.component';
 import { WeeklyBillboardsComponent } from './landing-page/weekly-billboards/weekly-billboards.component';
 import { PremieresComponent } from './landing-page/premieres/premieres.component';
+import { CarouselComponent } from './landing-page/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PremieresComponent } from './landing-page/premieres/premieres.component
     MoviesFilterComponent,
     SlidesComponent,
     WeeklyBillboardsComponent,
-    PremieresComponent
+    PremieresComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
