@@ -4,9 +4,10 @@
             <h4 class="center-align">Cartelera Semanal</h4>
         </div>
         <div class="row">
-            <div class="col s12 m2 l2 card">
+            <div class="col s12 m2 l2 card weekly-billboard" 
+                *ngFor="let movie of movies | slice:0:6">
                 <div class="card-image waver-efect waves-blog waves-light">
-                    <img class="activator" src="./assets/images/posters/BatmanVSSuperman.jpg">
+                    <img class="activator" [src]="movie.imagen">
                 </div>
                 <div class="card-content center-align">
                     <a href="#"><i class="fas fa-heart red-text text-lighten-2"></i></a>
@@ -17,99 +18,10 @@
                 </div>
                 <div class="card-reveal">
                     <div class="card-title grey-text text-darken-4">
-                        <i class="material-icons">close</i>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        {{ movie.nombre }}
+                        <i class="material-icons">close</i>                       
                     </div>
-                </div>
-            </div>
-            <div class="col s12 m2 l2 card">
-                <div class="card-image waver-efect waves-blog waves-light">
-                    <img class="activator" src="./assets/images/posters/cowboys_aliens.jpg">
-                </div>
-                <div class="card-content center-align">
-                    <a href="#"><i class="fas fa-heart red-text text-lighten-2"></i></a>
-                    <a href="#"><i class="fab fa-youtube red-text"></i></a>
-                    <a href="#"><i class="fas fa-bookmark orange-text text-darken-1"></i></a>
-                    <a href="#"><i class="fas fa-language"></i></a>
-                    <a href="#"><i class="fas fa-share-alt green-text text-darken-3"></i></a>
-                </div>
-                <div class="card-reveal">
-                    <div class="card-title grey-text text-darken-4">
-                        <i class="material-icons">close</i>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m2 l2 card">
-                <div class="card-image waver-efect waves-blog waves-light">
-                    <img class="activator" src="./assets/images/posters/gernika.jpg">
-                </div>
-                <div class="card-content center-align">
-                    <a href="#"><i class="fas fa-heart red-text text-lighten-2"></i></a>
-                    <a href="#"><i class="fab fa-youtube red-text"></i></a>
-                    <a href="#"><i class="fas fa-bookmark orange-text text-darken-1"></i></a>
-                    <a href="#"><i class="fas fa-language"></i></a>
-                    <a href="#"><i class="fas fa-share-alt green-text text-darken-3"></i></a>
-                </div>
-                <div class="card-reveal">
-                    <div class="card-title grey-text text-darken-4">
-                        <i class="material-icons">close</i>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m2 l2 card">
-                <div class="card-image waver-efect waves-blog waves-light">
-                    <img class="activator" src="./assets/images/posters/guardians-galaxy.jpg">
-                </div>
-                <div class="card-content center-align">
-                    <a href="#"><i class="fas fa-heart red-text text-lighten-2"></i></a>
-                    <a href="#"><i class="fab fa-youtube red-text"></i></a>
-                    <a href="#"><i class="fas fa-bookmark orange-text text-darken-1"></i></a>
-                    <a href="#"><i class="fas fa-language"></i></a>
-                    <a href="#"><i class="fas fa-share-alt green-text text-darken-3"></i></a>
-                </div>
-                <div class="card-reveal">
-                    <div class="card-title grey-text text-darken-4">
-                        <i class="material-icons">close</i>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m2 l2 card">
-                <div class="card-image waver-efect waves-blog waves-light">
-                    <img class="activator" src="./assets/images/posters/mostruos_vs_alienigenas.jpg">
-                </div>
-                <div class="card-content center-align">
-                    <a href="#"><i class="fas fa-heart red-text text-lighten-2"></i></a>
-                    <a href="#"><i class="fab fa-youtube red-text"></i></a>
-                    <a href="#"><i class="fas fa-bookmark orange-text text-darken-1"></i></a>
-                    <a href="#"><i class="fas fa-language"></i></a>
-                    <a href="#"><i class="fas fa-share-alt green-text text-darken-3"></i></a>
-                </div>
-                <div class="card-reveal">
-                    <div class="card-title grey-text text-darken-4">
-                        <i class="material-icons">close</i>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m2 l2 card">
-                <div class="card-image waver-efect waves-blog waves-light">
-                    <img class="activator" src="./assets/images/posters/pacific-rim.jpg">
-                </div>
-                <div class="card-content center-align">
-                    <a href="#"><i class="fas fa-heart red-text text-lighten-2"></i></a>
-                    <a href="#"><i class="fab fa-youtube red-text"></i></a>
-                    <a href="#"><i class="fas fa-bookmark orange-text text-darken-1"></i></a>
-                    <a href="#"><i class="fas fa-language"></i></a>
-                    <a href="#"><i class="fas fa-share-alt green-text text-darken-3"></i></a>
-                </div>
-                <div class="card-reveal">
-                    <div class="card-title grey-text text-darken-4">
-                        <i class="material-icons">close</i>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    </div>
+                    <p>{{ movie.descripcion }}</p>
                 </div>
             </div>            
         </div>

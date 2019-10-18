@@ -147,9 +147,16 @@ describe('WeeklyBillboardsComponent', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should call getMovies() from _landingPageService and return movies', () => {
+  it('should call getMovies() from _landingPageService', () => {
     const getMovies = spyOn(service, 'getMovies').and.returnValue(of(mockResponseMovies));
+    const compiled = fixture.debugElement.nativeElement;
     component.ngOnInit();
+    fixture.detectChanges();
     expect(getMovies).toHaveBeenCalled();
+    expect(compiled.querySelectorAll('.weekly-billboard').length).toBe(6);
+
+    for (const movie of component.movies) {
+      expect(movie.cartelera).toBeTruthy();
+    }
   });
 });

@@ -17,7 +17,7 @@ export class WeeklyBillboardsComponent implements OnInit {
 
   getWeeklyBillBoards() {
     this._landingService.getMovies().subscribe( (movies: Movie[]) => {
-      this.movies = movies;
+      this.movies = movies.filter( (movie: Movie) => movie.cartelera );
     });
   }
 
