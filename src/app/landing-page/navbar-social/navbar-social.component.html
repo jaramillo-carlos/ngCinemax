@@ -1,10 +1,11 @@
 <nav class="black social">
     <div class="nav-wrapper">    
         <ul class="left">
-            <li><a href="sass.html"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="sass.html"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="sass.html"><i class="fab fa-youtube"></i></a></li>
-            <li><a href="sass.html"><i class="fab fa-instagram"></i></a></li>
+            <li *ngFor="let network of socialNetworks">
+                <a href="{{ network.url }}" target="_blank">
+                    <i class="{{ network.icono }}"></i>
+                </a>
+            </li>
         </ul>
         <ul class="right hide-on-small-and-down">
             <li><a href="sass.html" class="waves-effect waves-light btn-small grey darken-2">Registro</a></li>

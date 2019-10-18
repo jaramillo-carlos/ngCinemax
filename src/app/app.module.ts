@@ -13,6 +13,7 @@ import { WeeklyBillboardsComponent } from './landing-page/weekly-billboards/week
 import { PremieresComponent } from './landing-page/premieres/premieres.component';
 import { CarouselComponent } from './landing-page/carousel/carousel.component';
 import { FooterComponent } from './landing-page/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FooterComponent } from './landing-page/footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [LandingPageService],
   bootstrap: [AppComponent]

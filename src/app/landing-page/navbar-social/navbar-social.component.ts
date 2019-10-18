@@ -1,3 +1,5 @@
+import { SocialNetwork } from './social-network';
+import { LandingPageService } from './../../services/landing-page.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar-social.component.css']
 })
 export class NavbarSocialComponent implements OnInit {
+  socialNetworks: SocialNetwork[] = [];
 
-  constructor() { }
+  constructor(public _landingService: LandingPageService) {}
 
   ngOnInit() {
+    this.getSocialNetworks();
+  }
+
+  getSocialNetworks() {
+    this._landingService.getSocialNetworks().subscribe(networks => {
+      this.socialNetworks = networks;
+    });
   }
 
 }
