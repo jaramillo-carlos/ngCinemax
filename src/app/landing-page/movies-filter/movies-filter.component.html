@@ -1,27 +1,31 @@
 <div class="row blue-grey lighten-4 filter">
     <h6 class="left-align"><strong>Compra tus entradas online</strong></h6>
     <div class="input-field col s12 m3 l3">
-        <select>
+        <select class="browser-default" [(ngModel)]="formFilter.date">
             <option value="" selected>Fecha</option>
-            <option value="">1</option>
+            <option [value]="date" *ngFor="let date of dates" value="">
+                {{ date | date:'longDate' }}
+            </option>
         </select>
     </div>
     <div class="input-field col s12 m3 l3">
-            <select>
-                <option value="" selected>Pelicula</option>
-                <option value="">1</option>
-            </select>
+        <select class="browser-default">
+            <option value="" selected>Pelicula</option>
+            <option [value]="movie.nombre" *ngFor="let movie of movies" value="">
+                {{ movie.nombre }}
+            </option>
+        </select>
     </div>
     <div class="input-field col s12 m3 l3">
-            <select>
-                <option value="" selected>Formato</option>
-                <option value="">1</option>
-            </select>
+        <select class="browser-default">
+            <option value="" selected>Formato</option>
+            <option [value]="format" *ngFor="let format of _landingService.formats">{{ format }}</option>
+        </select>
     </div>    
     <div class="input-field col s12 m3 l3">
-            <select>
-                <option value="" selected>Hora</option>
-                <option value="">1</option>
-            </select>
+        <select class="browser-default">
+            <option value="" selected>Hora</option>
+            <option [value]="hour" *ngFor="let hour of _landingService.hours">{{ hour }}</option>
+        </select>
     </div>    
 </div>

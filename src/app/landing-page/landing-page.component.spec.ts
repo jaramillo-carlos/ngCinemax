@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { WeeklyBillboardsComponent } from './weekly-billboards/weekly-billboards.component';
 import { SlidesComponent } from './slides/slides.component';
 import { PremieresComponent } from './premieres/premieres.component';
@@ -20,7 +21,7 @@ describe('LandingPageComponent', () => {
       declarations: [ LandingPageComponent, CarouselComponent, FooterComponent,
       MoviesFilterComponent, NavbarMenuComponent, NavbarSocialComponent,
       PremieresComponent, SlidesComponent, WeeklyBillboardsComponent ],
-      imports: [HttpClientTestingModule]
+      imports: [ HttpClientTestingModule, FormsModule ]
     })
     .compileComponents();
   }));

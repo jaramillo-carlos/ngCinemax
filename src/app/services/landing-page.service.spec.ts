@@ -4,6 +4,7 @@ import { TestBed, getTestBed } from '@angular/core/testing';
 
 import { LandingPageService } from './landing-page.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { format } from 'path';
 
 describe('LandingPageService', () => {
   const mockResponseNetworks: SocialNetwork[] = [
@@ -194,5 +195,24 @@ describe('LandingPageService', () => {
     const req = httpMock.expectOne('https://ngcinemax-71540.firebaseio.com/Peliculas.json');
     expect(req.request.method).toBe('GET');
     req.flush(mockResponseMovies);
+  });
+
+  it('Should have 4 types in formats', () => {
+    const formats: string[] = service.formats;
+    expect(formats.length).toEqual(4);
+  });
+
+
+  it('Should have 5 types in hours', () => {
+    const hours: string[] = service.hours;
+    const myHours: string[] = [];
+    for (let i = 2; i <= 10; i = i + 2) {
+      const hour = `${i}:00pm`;
+      myHours.push(hour);
+    }
+    expect(hours.length).toEqual(5);
+    for (let j = 0; j < service.hours.length; j++) {
+      expect(service.hours[j]).toEqual(myHours[j]);
+    }
   });
 });

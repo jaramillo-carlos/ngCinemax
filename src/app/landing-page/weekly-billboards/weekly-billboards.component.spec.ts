@@ -147,7 +147,7 @@ describe('WeeklyBillboardsComponent', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should call getMovies() from _landingPageService', () => {
+  it('should call getMovies() from _landingPageService on ngOnInit', () => {
     const getMovies = spyOn(service, 'getMovies').and.returnValue(of(mockResponseMovies));
     const compiled = fixture.debugElement.nativeElement;
     component.ngOnInit();
